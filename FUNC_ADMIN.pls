@@ -1,3 +1,18 @@
+
+--- Package with subprograms and variables visibles externally
+create or replace PACKAGE func_admin AS
+    --TYPE funcionario_salario IS RECORD ( func_id NUMBER, sal NUMBER );
+   -- Declare externally visible types, cursor, exception
+    invalid_salary EXCEPTION;
+
+   -- Declare externally callable subprograms
+    PROCEDURE hire_func;
+    PROCEDURE raise_salary (AMOUNT NUMBER);
+    PROCEDURE fire_func;
+
+END func_admin;
+
+------Body package
 create or replace PACKAGE BODY func_admin AS
     
    /**
